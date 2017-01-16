@@ -12,7 +12,11 @@ export default class Container extends React.Component {
   static childContextTypes = {
     'sticky-channel': React.PropTypes.any,
   }
-
+  
+  static propTypes = {
+     element: React.PropTypes.string,
+  }
+ 
   constructor(props) {
     super(props);
     this.channel = new Channel({ inherited: 0, offset: 0, node: null });
@@ -44,8 +48,7 @@ export default class Container extends React.Component {
   }
 
   render() {
-    return <div {...this.props}>
-      {this.props.children}
-    </div>
+    const { element, children, ...props } = this.props;
+    return React.createElement(element, props, children);
   }
 }
