@@ -205,18 +205,17 @@ export default class Sticky extends React.Component {
       ...props
     } = this.props;
 
-    return (
-      return React.createElement(containerElement, null,
-        React.createElement(placeholderElement, {
-          ref: 'placeholder',
-          style: placeholderStyle,
-        }),
-        React.createElement(childrenElement, {
-          ...props,
-          ref: 'children',
-          className: className,
-          style: style,
-        }, this.props.children)
+    return React.createElement(containerElement, null,
+      React.createElement(placeholderElement, {
+        ref: 'placeholder',
+        style: placeholderStyle,
+      }),
+      React.createElement(childrenElement, {
+        ...props,
+        ref: 'children',
+        className: className,
+        style: style,
+      }, this.props.children)
     );
   }
 }

@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import Channel from './channel';
 
 export default class Container extends React.Component {
-
   static contextTypes = {
     'sticky-channel': React.PropTypes.any,
   }
@@ -12,11 +11,11 @@ export default class Container extends React.Component {
   static childContextTypes = {
     'sticky-channel': React.PropTypes.any,
   }
-  
+
   static propTypes = {
-     element: React.PropTypes.string,
+    element: React.PropTypes.string,
   }
- 
+
   constructor(props) {
     super(props);
     this.channel = new Channel({ inherited: 0, offset: 0, node: null });
